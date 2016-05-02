@@ -1,0 +1,538 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{20F9EC99-3C4A-4AF7-ABC9-DB739E7180A1}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SignalRPrivateChat</RootNamespace>
+    <AssemblyName>SignalRPrivateChat</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.0\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.2.0\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.2.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.2.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="controls\ctlChatBox.ascx" />
+    <Content Include="fonts\font-awesome\css\font-awesome.css" />
+    <Content Include="fonts\font-awesome\css\font-awesome.min.css" />
+    <Content Include="fonts\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="images\notify.mp3" />
+    <Content Include="images\notify.wav" />
+    <Content Include="packages.config" />
+    <Content Include="fonts\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="fonts\font-awesome\less\bordered-pulled.less" />
+    <Content Include="fonts\font-awesome\less\core.less" />
+    <Content Include="fonts\font-awesome\less\fixed-width.less" />
+    <Content Include="fonts\font-awesome\less\font-awesome.less" />
+    <Content Include="fonts\font-awesome\less\icons.less" />
+    <Content Include="fonts\font-awesome\less\larger.less" />
+    <Content Include="fonts\font-awesome\less\list.less" />
+    <Content Include="fonts\font-awesome\less\mixins.less" />
+    <Content Include="fonts\font-awesome\less\path.less" />
+    <Content Include="fonts\font-awesome\less\rotated-flipped.less" />
+    <Content Include="fonts\font-awesome\less\spinning.less" />
+    <Content Include="fonts\font-awesome\less\stacked.less" />
+    <Content Include="fonts\font-awesome\less\variables.less" />
+    <Content Include="fonts\font-awesome\scss\font-awesome.scss" />
+    <Content Include="fonts\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="fonts\font-awesome\scss\_core.scss" />
+    <Content Include="fonts\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="fonts\font-awesome\scss\_icons.scss" />
+    <Content Include="fonts\font-awesome\scss\_larger.scss" />
+    <Content Include="fonts\font-awesome\scss\_list.scss" />
+    <Content Include="fonts\font-awesome\scss\_mixins.scss" />
+    <Content Include="fonts\font-awesome\scss\_path.scss" />
+    <Content Include="fonts\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="fonts\font-awesome\scss\_spinning.scss" />
+    <Content Include="fonts\font-awesome\scss\_stacked.scss" />
+    <Content Include="fonts\font-awesome\scss\_variables.scss" />
+    <Content Include="fonts\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="images\notify.ogg" />
+    <Content Include="Scripts\jquery\Web.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\chatboxManager.js" />
+    <Content Include="Scripts\chatboxManager.min.js" />
+    <Content Include="Scripts\jquery.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.0.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.0.min.js" />
+    <Content Include="Scripts\jquery.ui.chatbox.js" />
+    <Content Include="Scripts\jquery\colorbox\ColorBox\colorbox.css" />
+    <Content Include="Scripts\jquery\colorbox\ColorBox\images\border.png" />
+    <Content Include="Scripts\jquery\colorbox\ColorBox\images\controls.png" />
+    <Content Include="Scripts\jquery\colorbox\ColorBox\images\loading.gif" />
+    <Content Include="Scripts\jquery\colorbox\ColorBox\images\loading_background.png" />
+    <Content Include="Scripts\jquery\colorbox\ColorBox\images\overlay.png" />
+    <Content Include="Scripts\jquery\colorbox\i18n\jquery.colorbox-ar.js" />
+    <Content Include="Scripts\jquery\colorbox\i18n\jquery.colorbox-bg.js" />
+    <Content Include="Scripts\jquery\colorbox\i18n\jquery.colorbox-cs.js" />
+    <Content Include="Scripts\jquery\colorbox\i18n\jquery.colorbox-da.js" />
+    <Content Include="Scripts\jquery\colorbox\i18n\jquery.colorbox-de.js" />
+    <Content Include="Scripts\jquery\colorbox\i18n\jquery.colorbox-es.js" />
+    <Content Include="Scripts\jquery\colorbox\i18n\jquery.colorbox-et.js" />
+    <Content Include="Scripts\jquery\colorbox\i18n\jquery.colorbox-fa.js" />
+    <Content Include="Scripts\jquery\colorbox\i18n\jquery.colorbox-fi.js" />
+    <Content Include="Scripts\jquery\colorbox\i18n\jquery.colorbox-fr.js" />
+    <Content Include="Scripts\jquery\colorbox\i18n\jquery.colorbox-he.js" />
+    <Content Include="Scripts\jquery\colorbox\i18n\jquery.colorbox-hr.js" />
+    <Content Include="Scripts\jquery\colorbox\i18n\jquery.colorbox-hu.js" />
+    <Content Include="Scripts\jquery\colorbox\i18n\jquery.colorbox-id.js" />
+    <Content Include="Scripts\jquery\colorbox\i18n\jquery.colorbox-it.js" />
+    <Content Include="Scripts\jquery\colorbox\i18n\jquery.colorbox-ja.js" />
+    <Content Include="Scripts\jquery\colorbox\i18n\jquery.colorbox-kr.js" />
+    <Content Include="Scripts\jquery\colorbox\i18n\jquery.colorbox-lv.js" />
+    <Content Include="Scripts\jquery\colorbox\i18n\jquery.colorbox-nl.js" />
+    <Content Include="Scripts\jquery\colorbox\i18n\jquery.colorbox-no.js" />
+    <Content Include="Scripts\jquery\colorbox\i18n\jquery.colorbox-pl.js" />
+    <Content Include="Scripts\jquery\colorbox\i18n\jquery.colorbox-pt-br.js" />
+    <Content Include="Scripts\jquery\colorbox\i18n\jquery.colorbox-ro.js" />
+    <Content Include="Scripts\jquery\colorbox\i18n\jquery.colorbox-ru.js" />
+    <Content Include="Scripts\jquery\colorbox\i18n\jquery.colorbox-si.js" />
+    <Content Include="Scripts\jquery\colorbox\i18n\jquery.colorbox-sk.js" />
+    <Content Include="Scripts\jquery\colorbox\i18n\jquery.colorbox-sv.js" />
+    <Content Include="Scripts\jquery\colorbox\i18n\jquery.colorbox-tr.js" />
+    <Content Include="Scripts\jquery\colorbox\i18n\jquery.colorbox-zh-CN.js" />
+    <Content Include="Scripts\jquery\colorbox\jquery.colorbox-min.js" />
+    <Content Include="Scripts\jquery\colorbox\jquery.colorbox.js" />
+    <Content Include="Scripts\jquery\fileuploader.css" />
+    <Content Include="Scripts\jquery\fileuploader.js" />
+    <Content Include="Scripts\jquery\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery\jquery-1.11.1.min.js" />
+    <Content Include="Scripts\jquery\jquery-1.4.4.min.js" />
+    <Content Include="Scripts\jquery\jquery-2.1.3.min.js" />
+    <Content Include="Scripts\jquery\jquery-ui\external\jquery\jquery.js" />
+    <Content Include="Scripts\jquery\jquery-ui\images\animated-overlay.gif" />
+    <Content Include="Scripts\jquery\jquery-ui\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Scripts\jquery\jquery-ui\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Scripts\jquery\jquery-ui\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Scripts\jquery\jquery-ui\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Scripts\jquery\jquery-ui\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Scripts\jquery\jquery-ui\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Scripts\jquery\jquery-ui\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Scripts\jquery\jquery-ui\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Scripts\jquery\jquery-ui\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Scripts\jquery\jquery-ui\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Scripts\jquery\jquery-ui\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Scripts\jquery\jquery-ui\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Scripts\jquery\jquery-ui\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Scripts\jquery\jquery-ui\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Scripts\jquery\jquery-ui\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Scripts\jquery\jquery-ui\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Scripts\jquery\jquery-ui\images\ui-icons_222222_256x240.png" />
+    <Content Include="Scripts\jquery\jquery-ui\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Scripts\jquery\jquery-ui\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Scripts\jquery\jquery-ui\images\ui-icons_454545_256x240.png" />
+    <Content Include="Scripts\jquery\jquery-ui\images\ui-icons_888888_256x240.png" />
+    <Content Include="Scripts\jquery\jquery-ui\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Scripts\jquery\jquery-ui\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Scripts\jquery\jquery-ui\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Scripts\jquery\jquery-ui\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Scripts\jquery\jquery-ui\index.html" />
+    <Content Include="Scripts\jquery\jquery-ui\jquery-ui.css" />
+    <Content Include="Scripts\jquery\jquery-ui\jquery-ui.js" />
+    <Content Include="Scripts\jquery\jquery-ui\jquery-ui.min.css" />
+    <Content Include="Scripts\jquery\jquery-ui\jquery-ui.min.js" />
+    <Content Include="Scripts\jquery\jquery-ui\jquery-ui.structure.css" />
+    <Content Include="Scripts\jquery\jquery-ui\jquery-ui.structure.min.css" />
+    <Content Include="Scripts\jquery\jquery-ui\jquery-ui.theme.css" />
+    <Content Include="Scripts\jquery\jquery-ui\jquery-ui.theme.min.css" />
+    <Content Include="Scripts\jquery\jquery.bxslider.min.js" />
+    <Content Include="Scripts\jquery\jquery.dataTables.css" />
+    <Content Include="Scripts\jquery\jquery.dataTables.editable.js" />
+    <Content Include="Scripts\jquery\jquery.dataTables.grouping.js" />
+    <Content Include="Scripts\jquery\jquery.dataTables.js" />
+    <Content Include="Scripts\jquery\jquery.dataTables.min.js" />
+    <Content Include="Scripts\jquery\jquery.dataTables.rowReordering.js" />
+    <Content Include="Scripts\jquery\jquery.dataTables_themeroller.css" />
+    <Content Include="Scripts\jquery\jquery.DateTimepick.css" />
+    <Content Include="Scripts\jquery\jquery.jeditable.js" />
+    <Content Include="Scripts\jquery\jquery.linq.js" />
+    <Content Include="Scripts\jquery\jquery.tablednd_0_5.js" />
+    <Content Include="Scripts\jquery\jquery.timepicker.css" />
+    <Content Include="Scripts\jquery\jquery.timepicker.js" />
+    <Content Include="Scripts\jquery\jquery.timepicker.min.css" />
+    <Content Include="Scripts\jquery\jquery.timepicker.min.js" />
+    <Content Include="Scripts\jquery\jquery.validation\additional-methods.js" />
+    <Content Include="Scripts\jquery\jquery.validation\additional-methods.min.js" />
+    <Content Include="Scripts\jquery\jquery.validation\jquery.validate.js" />
+    <Content Include="Scripts\jquery\jquery.validation\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_ar.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_ar.min.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_bg.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_bg.min.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_ca.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_ca.min.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_cs.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_cs.min.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_da.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_da.min.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_de.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_de.min.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_el.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_el.min.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_es.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_es.min.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_es_AR.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_es_AR.min.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_et.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_et.min.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_eu.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_eu.min.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_fa.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_fa.min.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_fi.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_fi.min.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_fr.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_fr.min.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_gl.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_gl.min.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_he.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_he.min.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_hr.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_hr.min.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_hu.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_hu.min.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_id.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_id.min.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_is.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_is.min.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_it.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_it.min.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_ja.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_ja.min.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_ka.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_ka.min.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_kk.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_kk.min.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_ko.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_ko.min.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_lt.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_lt.min.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_lv.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_lv.min.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_my.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_my.min.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_nl.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_nl.min.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_no.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_no.min.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_pl.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_pl.min.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_pt_BR.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_pt_BR.min.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_pt_PT.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_pt_PT.min.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_ro.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_ro.min.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_ru.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_ru.min.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_si.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_si.min.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_sk.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_sk.min.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_sl.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_sl.min.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_sr.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_sr.min.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_sr_lat.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_sr_lat.min.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_sv.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_sv.min.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_th.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_th.min.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_tj.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_tj.min.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_tr.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_tr.min.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_uk.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_uk.min.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_vi.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_vi.min.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_zh.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_zh.min.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_zh_TW.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\messages_zh_TW.min.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\methods_de.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\methods_de.min.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\methods_es_CL.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\methods_es_CL.min.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\methods_fi.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\methods_fi.min.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\methods_nl.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\methods_nl.min.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\methods_pt.js" />
+    <Content Include="Scripts\jquery\jquery.validation\localization\methods_pt.min.js" />
+    <Content Include="Scripts\jquery\jquery\colorbox\ColorBox\colorbox.css" />
+    <Content Include="Scripts\jquery\jquery\colorbox\ColorBox\images\border.png" />
+    <Content Include="Scripts\jquery\jquery\colorbox\ColorBox\images\controls.png" />
+    <Content Include="Scripts\jquery\jquery\colorbox\ColorBox\images\loading.gif" />
+    <Content Include="Scripts\jquery\jquery\colorbox\ColorBox\images\loading_background.png" />
+    <Content Include="Scripts\jquery\jquery\colorbox\ColorBox\images\overlay.png" />
+    <Content Include="Scripts\jquery\jquery\colorbox\i18n\jquery.colorbox-ar.js" />
+    <Content Include="Scripts\jquery\jquery\colorbox\i18n\jquery.colorbox-bg.js" />
+    <Content Include="Scripts\jquery\jquery\colorbox\i18n\jquery.colorbox-cs.js" />
+    <Content Include="Scripts\jquery\jquery\colorbox\i18n\jquery.colorbox-da.js" />
+    <Content Include="Scripts\jquery\jquery\colorbox\i18n\jquery.colorbox-de.js" />
+    <Content Include="Scripts\jquery\jquery\colorbox\i18n\jquery.colorbox-es.js" />
+    <Content Include="Scripts\jquery\jquery\colorbox\i18n\jquery.colorbox-et.js" />
+    <Content Include="Scripts\jquery\jquery\colorbox\i18n\jquery.colorbox-fa.js" />
+    <Content Include="Scripts\jquery\jquery\colorbox\i18n\jquery.colorbox-fi.js" />
+    <Content Include="Scripts\jquery\jquery\colorbox\i18n\jquery.colorbox-fr.js" />
+    <Content Include="Scripts\jquery\jquery\colorbox\i18n\jquery.colorbox-he.js" />
+    <Content Include="Scripts\jquery\jquery\colorbox\i18n\jquery.colorbox-hr.js" />
+    <Content Include="Scripts\jquery\jquery\colorbox\i18n\jquery.colorbox-hu.js" />
+    <Content Include="Scripts\jquery\jquery\colorbox\i18n\jquery.colorbox-id.js" />
+    <Content Include="Scripts\jquery\jquery\colorbox\i18n\jquery.colorbox-it.js" />
+    <Content Include="Scripts\jquery\jquery\colorbox\i18n\jquery.colorbox-ja.js" />
+    <Content Include="Scripts\jquery\jquery\colorbox\i18n\jquery.colorbox-kr.js" />
+    <Content Include="Scripts\jquery\jquery\colorbox\i18n\jquery.colorbox-lv.js" />
+    <Content Include="Scripts\jquery\jquery\colorbox\i18n\jquery.colorbox-nl.js" />
+    <Content Include="Scripts\jquery\jquery\colorbox\i18n\jquery.colorbox-no.js" />
+    <Content Include="Scripts\jquery\jquery\colorbox\i18n\jquery.colorbox-pl.js" />
+    <Content Include="Scripts\jquery\jquery\colorbox\i18n\jquery.colorbox-pt-br.js" />
+    <Content Include="Scripts\jquery\jquery\colorbox\i18n\jquery.colorbox-ro.js" />
+    <Content Include="Scripts\jquery\jquery\colorbox\i18n\jquery.colorbox-ru.js" />
+    <Content Include="Scripts\jquery\jquery\colorbox\i18n\jquery.colorbox-si.js" />
+    <Content Include="Scripts\jquery\jquery\colorbox\i18n\jquery.colorbox-sk.js" />
+    <Content Include="Scripts\jquery\jquery\colorbox\i18n\jquery.colorbox-sv.js" />
+    <Content Include="Scripts\jquery\jquery\colorbox\i18n\jquery.colorbox-tr.js" />
+    <Content Include="Scripts\jquery\jquery\colorbox\i18n\jquery.colorbox-zh-CN.js" />
+    <Content Include="Scripts\jquery\jquery\colorbox\jquery.colorbox-min.js" />
+    <Content Include="Scripts\jquery\jquery\colorbox\jquery.colorbox.js" />
+    <Content Include="Scripts\jquery\jquery\fileuploader.css" />
+    <Content Include="Scripts\jquery\jquery\fileuploader.js" />
+    <Content Include="Scripts\jquery\jquery\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery\jquery\jquery-1.11.1.min.js" />
+    <Content Include="Scripts\jquery\jquery\jquery-ui\external\jquery\jquery.js" />
+    <Content Include="Scripts\jquery\jquery\jquery-ui\images\animated-overlay.gif" />
+    <Content Include="Scripts\jquery\jquery\jquery-ui\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Scripts\jquery\jquery\jquery-ui\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Scripts\jquery\jquery\jquery-ui\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Scripts\jquery\jquery\jquery-ui\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Scripts\jquery\jquery\jquery-ui\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Scripts\jquery\jquery\jquery-ui\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Scripts\jquery\jquery\jquery-ui\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Scripts\jquery\jquery\jquery-ui\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Scripts\jquery\jquery\jquery-ui\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Scripts\jquery\jquery\jquery-ui\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Scripts\jquery\jquery\jquery-ui\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Scripts\jquery\jquery\jquery-ui\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Scripts\jquery\jquery\jquery-ui\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Scripts\jquery\jquery\jquery-ui\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Scripts\jquery\jquery\jquery-ui\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Scripts\jquery\jquery\jquery-ui\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Scripts\jquery\jquery\jquery-ui\images\ui-icons_222222_256x240.png" />
+    <Content Include="Scripts\jquery\jquery\jquery-ui\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Scripts\jquery\jquery\jquery-ui\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Scripts\jquery\jquery\jquery-ui\images\ui-icons_454545_256x240.png" />
+    <Content Include="Scripts\jquery\jquery\jquery-ui\images\ui-icons_888888_256x240.png" />
+    <Content Include="Scripts\jquery\jquery\jquery-ui\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Scripts\jquery\jquery\jquery-ui\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Scripts\jquery\jquery\jquery-ui\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Scripts\jquery\jquery\jquery-ui\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Scripts\jquery\jquery\jquery-ui\index.html" />
+    <Content Include="Scripts\jquery\jquery\jquery-ui\jquery-ui.css" />
+    <Content Include="Scripts\jquery\jquery\jquery-ui\jquery-ui.js" />
+    <Content Include="Scripts\jquery\jquery\jquery-ui\jquery-ui.min.css" />
+    <Content Include="Scripts\jquery\jquery\jquery-ui\jquery-ui.min.js" />
+    <Content Include="Scripts\jquery\jquery\jquery-ui\jquery-ui.structure.css" />
+    <Content Include="Scripts\jquery\jquery\jquery-ui\jquery-ui.structure.min.css" />
+    <Content Include="Scripts\jquery\jquery\jquery-ui\jquery-ui.theme.css" />
+    <Content Include="Scripts\jquery\jquery\jquery-ui\jquery-ui.theme.min.css" />
+    <Content Include="Scripts\jquery\jquery\jquery.bxslider.min.js" />
+    <Content Include="Scripts\jquery\jquery\jquery.dataTables.css" />
+    <Content Include="Scripts\jquery\jquery\jquery.dataTables.editable.js" />
+    <Content Include="Scripts\jquery\jquery\jquery.dataTables.grouping.js" />
+    <Content Include="Scripts\jquery\jquery\jquery.dataTables.js" />
+    <Content Include="Scripts\jquery\jquery\jquery.dataTables.min.js" />
+    <Content Include="Scripts\jquery\jquery\jquery.dataTables.rowReordering.js" />
+    <Content Include="Scripts\jquery\jquery\jquery.dataTables_themeroller.css" />
+    <Content Include="Scripts\jquery\jquery\jquery.DateTimepick.css" />
+    <Content Include="Scripts\jquery\jquery\jquery.highlightFade.js" />
+    <Content Include="Scripts\jquery\jquery\jquery.jeditable.js" />
+    <Content Include="Scripts\jquery\jquery\jquery.linq.js" />
+    <Content Include="Scripts\jquery\jquery\lightbox.css" />
+    <Content Include="Scripts\jquery\jquery\lightbox.js" />
+    <Content Include="Scripts\jquery\jquery\lightbox.min.js" />
+    <Content Include="Scripts\jquery\jquery\loading.gif" />
+    <Content Include="Scripts\jquery\jquery\screen.css" />
+    <Content Include="Scripts\jquery\jquery\ZeroClipboard.js" />
+    <Content Include="Scripts\jquery\jquery\ZeroClipboard.min.js" />
+    <Content Include="Scripts\jquery\jquery\ZeroClipboard.swf" />
+    <Content Include="Scripts\jquery\lightbox.css" />
+    <Content Include="Scripts\jquery\lightbox.js" />
+    <Content Include="Scripts\jquery\lightbox.min.js" />
+    <Content Include="Scripts\jquery\linq.js" />
+    <Content Include="Scripts\jquery\loading.gif" />
+    <Content Include="Scripts\jquery\screen.css" />
+    <Content Include="Scripts\jquery\Validation.js" />
+    <Content Include="Scripts\jquery\ZeroClipboard.js" />
+    <Content Include="Scripts\jquery\ZeroClipboard.min.js" />
+    <Content Include="Scripts\jquery\ZeroClipboard.swf" />
+    <Content Include="StartChat.aspx" />
+    <Content Include="Styles\bootstrap.css" />
+    <Content Include="Styles\bootstrap.min.css" />
+    <Content Include="Styles\jquery.ui.chatbox.css" />
+    <Content Include="Styles\style.css" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ChatHelper\ChatHub.cs" />
+    <Compile Include="ChatHelper\MessageDetail.cs" />
+    <Compile Include="ChatHelper\Startup.cs" />
+    <Compile Include="ChatHelper\UserDetail.cs" />
+    <Compile Include="controls\ctlChatBox.ascx.cs">
+      <DependentUpon>ctlChatBox.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\ctlChatBox.ascx.designer.cs">
+      <DependentUpon>ctlChatBox.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StartChat.aspx.cs">
+      <DependentUpon>StartChat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StartChat.aspx.designer.cs">
+      <DependentUpon>StartChat.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49703</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:49703/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
